@@ -33,7 +33,6 @@
             if($_SESSION['role_id'] == 1) {
                 $query = "SELECT * FROM products WHERE product_name LIKE '%$keyword%' AND vendor_id = $user_id";                
                 include "components/navbarVendor.php";
-                echo '<a href="createProduct.html"><button type="button" class="btn btn-primary">Create new product</button></a>';
             } else if($_SESSION['role_id'] == 2) {
                 $query = "SELECT * FROM products WHERE product_name LIKE '%$keyword%'";
                 include "components/navbarUser.php"; 
