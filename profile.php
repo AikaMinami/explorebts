@@ -35,8 +35,8 @@
         ?>        
             <!-- Profile card -->
             <br>
-            <div class="card text-center" >
-                <img style="width: 200px; height: 200px" src="uploads/profile_pict/<?php echo $row['profile_pict'];?>" class="mx-auto d-block card-img-top" alt="...">
+            <div class="card mx-auto text-center mb-3" style="width: 800px; height: 400px" >
+                <img style="width: 100px; height: 100px" src="uploads/profile_pict/<?php echo $row['profile_pict'];?>" class="mx-auto d-block card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title"><?php echo $row['fullname'];?></h5>
                     <p>Username: <?php echo $row['username'] ?></p>
