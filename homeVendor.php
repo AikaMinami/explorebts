@@ -81,7 +81,6 @@
                 <input class="form-control mr-sm-2 w-50" type="search" placeholder="Search" name="keyword">
                 <button class="btn btn-dark my-2 my-sm-0 search-button" type="submit">Search</button>
             </form>
-            <a href="createProduct.html"><button type="button" class="btn btn-primary">Create new product</button></a>
             <h3>Your Services</h3> <br>
         </div>
         
