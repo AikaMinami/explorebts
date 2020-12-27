@@ -20,10 +20,10 @@
         if (mysqli_query($connect, $query)) {            
             echo "<script>alert('Transaction Successfull '); window.location.href='myOrder.php'</script>";
         } else {
-            echo "<script>alert('Can't Connect ." .  mysqli_error($connect) . "'); window.location.href='homeUser.php'</script>";
+            echo "<script>alert('Cannot Connect ." .  mysqli_error($connect) . "'); window.location.href='homeUser.php'</script>";
         }
     } else {            
-        echo "<script>alert('Can't Proceed ." .  mysqli_error($connect) . "'); window.location.href='homeUser.php'</script>";
+        echo "<script>alert('Cannot Proceed ." .  mysqli_error($connect) . "'); window.location.href='homeUser.php'</script>";
     }
        
 ?>

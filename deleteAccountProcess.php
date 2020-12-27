@@ -18,11 +18,9 @@
         if (mysqli_query($connect, $query)) {                                             
             echo "<script>alert('Alhamdulillah udah bisa'); window.location.href='logoutSession.php'</script>";
         } else {                
-            echo mysqli_error($connect);
-            //echo "<script>alert('Maaf gabisa nambahin soalnya nganu<br>" .  mysqli_error($connect) . "'); window.location.href='homeVendor.php'</script>";
+            echo "<script>alert('Delete Failed<br>" .  mysqli_error($connect) . "'); window.location.href='homeVendor.php'</script>";
         }        
     } else {                
-        echo  mysqli_error($connect);
-        //echo "<script>alert('Maaf gabisa nambahin soalnya nganu<br>" .  mysqli_error($connect) . "'); window.location.href='homeVendor.php'</script>";
+        echo "<script>alert('Delete Failed<br>" .  mysqli_error($connect) . "'); window.location.href='homeVendor.php'</script>";
     }
 ?>

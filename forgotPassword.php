@@ -57,11 +57,11 @@
             <form method="POST" action="forgotPasswordProcess.php">                
                 <div class="mb-3">
                     <label for="username" class="form-label">Username or Email</label>
-                    <input type="text" class="form-control" name="userKeyword">                                
+                    <input type="text" class="form-control" name="userKeyword" required>                                
                 </div>     
                 <div class="mb-3">
                     <label for="newPassword" class="form-label">New Password</label>
-                    <input type="password" class="form-control" name="newPassword">                                
+                    <input type="password" class="form-control" name="newPassword" required>                                
                 </div>          
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>

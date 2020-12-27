@@ -66,7 +66,7 @@
                     Product ID   
                 </td>
                 <td>
-                    <input type="text" name="product_id" placeholder="Product ID" value="<?php echo $row['product_id']?>">
+                    <input type="text" name="product_id" placeholder="Product ID" value="<?php echo $row['product_id']?>" required>
                 </td>
             </tr>
             <tr>
@@ -74,7 +74,7 @@
                     Product Name    
                 </td>
                 <td>
-                    <input type="text" name="product_name" placeholder="Product Name" value="<?php echo $row['product_name']?>">
+                    <input type="text" name="product_name" placeholder="Product Name" value="<?php echo $row['product_name']?>" required>
                 </td>
             </tr>
             <tr>
@@ -82,7 +82,7 @@
                     Category 
                 </td>
                 <td>
-                    <select class="form-control" id="exampleFormControlSelect1" name="category_code">
+                    <select class="form-control" id="exampleFormControlSelect1" name="category_code" required>
                         <option value="CMP">CMP</option>
                         <option value="INN">INN</option>
                         <option value="JEEP">JEEP</option>
@@ -95,7 +95,7 @@
                     Unit Price 
                 </td>
                 <td>
-                    <input type="number" name="unit_price" placeholder="Unit Price" value="<?php echo $row['unit_price']?>">
+                    <input type="number" name="unit_price" placeholder="Unit Price" value="<?php echo $row['unit_price']?>" required>
                 </td>
             </tr>
             <tr>
@@ -103,7 +103,7 @@
                     Product Stock 
                 </td>
                 <td>
-                    <input type="number" name="product_stock" placeholder="Product Stock" value="<?php echo $row['product_stock']?>">
+                    <input type="number" name="product_stock" placeholder="Product Stock" value="<?php echo $row['product_stock']?>" required>
                 </td>
             </tr>
             <tr>
@@ -111,7 +111,7 @@
                     Product Description 
                 </td>
                 <td>
-                    <input type="textarea" name="product_desc" placeholder="Product Description" value="<?php echo $row['product_desc']?>">
+                    <input type="textarea" name="product_desc" placeholder="Product Description" value="<?php echo $row['product_desc']?>" required>
                 </td>
             </tr>
             <tr>

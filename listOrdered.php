@@ -83,7 +83,7 @@
           <!-- /.product card -->
           <!-- modal -->
           <div id="modal<?php echo $row['product_id'];?>" class="modal fade" role="dialog" >
-              <div class="modal-dialog modal-sm" role="document">
+              <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     
                   <!-- Modal Header -->
@@ -96,8 +96,38 @@
                   <div class="modal-body" style="align-items: center;">
                     <img class="img-fluid" src="uploads/<?php echo $row['product_pict'];?>" alt="">
                     <?php echo $row['product_desc']; ?>
-                    <br> <br> <br>
+                    <br><br>
                     <p>Product Stock : <?php echo $row['product_stock']; ?></p>
+                    <h6>Ordered by : </h6>
+                    <?php
+                      $booking_id=$row['booking_id'];
+                      $sql = "SELECT * FROM bookings INNER JOIN users
+                      ON bookings.tourist_id = users.user_id
+                       WHERE booking_id =  $booking_id";
+                      $query = mysqli_query($connect, $sql);
+                      
+                      echo "<table border='1' cellpadding='5'>";
+                      echo "<tr style='background-color:#f4623a; color:white;'>
+                          <th> Full Name</th>
+                          <th> Phone</th>
+                          <th> Booking Date</th>
+                          <th> Quantity</th>
+                          <th> Days</th>
+                        </tr>";
+                      
+                      //print data
+                      while($row = mysqli_fetch_array($query)){
+                        ?>
+                          <tr>
+                            <td><?php echo $row["fullname"] ?></td>
+                            <td><?php echo $row["phone"] ?></td>
+                            <td><?php echo $row["booking_date"] ?></td>
+                            <td><?php echo $row["quantity"] ?></td>
+                            <td><?php echo $row["booking_days"] ?></td>
+                          </tr>
+                        <?php
+                      }
+                      ?>
                   </div>
                 </div>
               </div>

@@ -46,15 +46,15 @@
                 <form action="bookingProcess.php?product_id=<?php echo $_GET['product_id']?>" method="POST">                
                     <div class="mb-3">
                         <label for="booking_date" class="form-label">Booking Date (yyyy-mm-dd)</label>
-                        <input type="text" class="form-control" name="booking_date" require>                                
+                        <input type="text" class="form-control" name="booking_date" required>                                
                     </div>
                     <div class="mb-3">
                         <label for="quantity" class="form-label">Quantity</label>
-                        <input type="text" class="form-control" name="quantity" require>                                
+                        <input type="text" class="form-control" name="quantity" required>                                
                     </div>
                     <div class="mb-3">
                         <label for="booking_days" class="form-label">Booking Days (Length of Days)</label>
-                        <input type="text" class="form-control" name="booking_days" require>                                
+                        <input type="text" class="form-control" name="booking_days" required>                                
                     </div>
                                         
                     <button type="submit" class="btn btn-primary">Submit</button>

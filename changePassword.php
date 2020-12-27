@@ -39,20 +39,17 @@
             } 
         ?> 
         <br><br><br><br>
-    <h1>Forgot Your Password?</h1>
+    <h1>Change Password</h1>
     <div class="card container">
         <div class="card-body">
-            <?php
-                $user_id = $_GET['user_id'];
-            ?>        
             <form method="POST" action="changePasswordProcess.php?user_id=<?php echo $user_id?>">                
                 <div class="mb-3">
                     <label for="oldPassword" class="form-label">Old Password</label>
-                    <input type="password" class="form-control" name="oldPassword">                                
+                    <input type="password" class="form-control" name="oldPassword" required>                                
                 </div>     
                 <div class="mb-3">
                     <label for="newPassword" class="form-label">New Password</label>
-                    <input type="password" class="form-control" name="newPassword">                                
+                    <input type="password" class="form-control" name="newPassword" required>                                
                 </div>          
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>

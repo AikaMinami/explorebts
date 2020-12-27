@@ -20,7 +20,6 @@
     if (mysqli_query($connect, $query)) {                     
         echo "<script>alert('Update Succesfull '); window.location.href='homeVendor.php'</script>";
     } else {        
-        echo mysqli_error($connect);
-        //echo "<script>alert('Gaiso su." .  mysqli_error($connect) . "'); window.location.href='createProduct.html'</script>";
+        echo "<script>alert('Update Failed<br>" .  mysqli_error($connect) . "'); window.location.href='homeVendor.php'</script>";
     }
 ?>

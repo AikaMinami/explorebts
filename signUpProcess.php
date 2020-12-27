@@ -17,7 +17,7 @@
     $result = mysqli_query($connect, $query);
 
     if (mysqli_num_rows($result) > 0) {
-        echo "<script>alert('Username atau email atau nomor telp sudah pernah dipakai." .  mysqli_error($connect) . "'); window.location.href='signUp.html'</script>";
+        echo "<script>alert('Username atau email atau nomor telp sudah pernah dipakai." .  mysqli_error($connect) . "'); window.location.href='signUp.php'</script>";
     }
 
     move_uploaded_file($_FILES['profile_pict']['tmp_name'], $target_path);    
@@ -27,6 +27,8 @@
     
     if (mysqli_query($connect, $query)) {        
         session_start();
+        $query = "SELECT * FROM users WHERE username = '$username'";
+        $row = mysqli_fetch_array(mysqli_query($connect, $query));
         $_SESSION['username'] = $username;
         $_SESSION['user_id'] = $row['user_id'];
         $_SESSION['role_id'] = $role_id;        
