@@ -77,13 +77,20 @@
         <?php if($_SESSION['login']){ ?>
             <h1>Welcome, <?php echo $_SESSION['username']; ?> !</h1> <br>
             <?php } ?>
-            <h3>Recommended</h3> <br>
+            <h3>Recommended</h3>
+            <!-- search -->
+            <form action="search.php" method="GET" class="form-inline justify-content-center pt-4">
+              <input class="form-control mr-sm-2 w-50" type="search" placeholder="Search" name="keyword">
+            <button class="btn my-2 my-sm-0 search-button" type="submit" style="background-color:#f4623a; color:white">Search</button>
+            </form>
+            <!-- /.search -->
+             <br>
         </div>
         
         <div class="row">
             <?php
                 include "connection.php";
-                $query = "SELECT * FROM products";
+                $query = "SELECT * FROM products WHERE product_stock > 0";
                 $result = mysqli_query($connect, $query);
                 
                 if(mysqli_num_rows($result) > 0){

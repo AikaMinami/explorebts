@@ -58,8 +58,7 @@
             <div class="card container">
             <div class="card-body" style="font-weight: bold;">
             <br>
-            <form action="editBookingProcess.php?product_id=<?php echo $_GET['product_id']?>" method="POST">
-            
+            <form action="editBookingProcess.php?booking_id=<?php echo $_GET['booking_id'];?>&product_id=<?php echo $id?>" method="POST">
             <?php
                 while($row = mysqli_fetch_array($result)){
             ?>             

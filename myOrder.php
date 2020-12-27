@@ -141,8 +141,8 @@
                         
                             <!-- Modal footer -->
                             <div class="modal-footer">
-                               <a href="updateBookingUser.php?product_id=<?php echo $row['product_id'];?>"><button type="button" class="btn btn-primary" >Update Bookings</button></a>
-                                <a href="deleteBookingProcess.php?booking_id=<?php echo $row['booking_id'];?>"><button type="button" class="btn btn-danger" onclick="return confirm('Are you sure to delete?')">Cancel Order</button></a>
+                              <a href="updateBookingUser.php?booking_id=<?php echo $row['booking_id'];?>&product_id=<?php echo $row['product_id'];?>"><button type="button" class="btn btn-primary" >Update Bookings</button></a>
+                              <a href="deleteBookingProcess.php?booking_id=<?php echo $row['booking_id'];?>"><button type="button" class="btn btn-danger" onclick="return confirm('Are you sure to delete?')">Cancel Order</button></a>
                             </div>
                     
                             </div>
