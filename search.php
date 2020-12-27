@@ -74,7 +74,7 @@
                                                     </div>
                                                 <?php
                                                 } else if($_SESSION['role_id'] == 2) {?>
-                                                    <a href="booking.html?product_id=<?php echo $row['product_id'];?>"><button type="button" class="btn btn-primary">Booking!</button></a>
+                                                    <a href="booking.php?product_id=<?php echo $row['product_id'];?>"><button type="button" class="btn btn-primary">Booking!</button></a>
                                                     <?php
                                                 }                                                 
                                             ?>                                                                                        
