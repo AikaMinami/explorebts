@@ -75,13 +75,15 @@
         <?php 
         $username = $_SESSION['username'];        
         if($_SESSION['login']){ ?>
-            <h1>Welcome, <?php echo $username; ?> !</h1> <br>
+            <h1>Welcome, <?php echo $username; ?> !</h1>
             <?php } ?>
+            <!-- search -->
             <form action="search.php" method="GET" class="form-inline justify-content-center pt-4">
-                <input class="form-control mr-sm-2 w-50" type="search" placeholder="Search" name="keyword">
-                <button class="btn btn-dark my-2 my-sm-0 search-button" type="submit">Search</button>
+              <input class="form-control mr-sm-2 w-50" type="search" placeholder="Search" name="keyword">
+            <button class="btn my-2 my-sm-0 search-button" type="submit" style="background-color:#f4623a; color:white">Search</button>
             </form>
-            <h3>Your Services</h3> <br>
+            <!-- /.search -->
+            <br><h3>Your Services</h3> <br>
         </div>
         
         <div class="row">
