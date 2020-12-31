@@ -67,11 +67,8 @@
                                         <div class="row">
                                             <?php
                                                 if($_SESSION['role_id'] == 2) { ?>
-                                                    <div class=col>
-                                                        <a href="updateForm.php?product_id=<?php echo $row['product_id'];?>"><button type="button" class="btn btn-success">Edit</button></a>
-                                                    </div>
-                                                    <div class=col>                                                
-                                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteProduct<?php echo $row['product_id'];?>">Delete</button>
+                                                    <div class="card-footer">
+                                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal<?php echo $row['product_id']; ?>">Check > </button>
                                                     </div>
                                                 <?php
                                                 } else if($_SESSION['role_id'] == 3) {?>
@@ -84,26 +81,33 @@
                                 </div>
                             </div>
                             <!-- /.product card -->        
-                            <!-- Modal -->
-                            <div class="modal fade" id="deleteProduct<?php echo $row['product_id'];?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
+                            <!-- modal -->
+                            <div id="modal<?php echo $row['product_id'];?>" class="modal fade" role="dialog" >
+                            <div class="modal-dialog modal-sm" role="document">
                                 <div class="modal-content">
+                                    
+                                <!-- Modal Header -->
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Delete Product</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                    </button>
+                                    <h4 class="modal-title"><?php echo $row['product_name'];?></h4>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
                                 </div>
-                                <div class="modal-body">
-                                    Are u sure to delete <?php echo $row['product_name'];?>?
+                            
+                                <!-- Modal body -->
+                                <div class="modal-body" style="align-items: center;">
+                                    <img class="img-fluid" src="uploads/<?php echo $row['product_pict'];?>" alt="">
+                                    <?php echo $row['product_desc']; ?>
                                 </div>
+                            
+                                <!-- Modal footer -->
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                    <a href="deleteProductProcess.php?product_id=<?php echo $row['product_id'];?>"><button type="button" class="btn btn-danger">Yes</button></a>
+                                    <a href="updateForm.php?product_id=<?php echo $row['product_id'];?>"><button type="button" class="btn btn-primary" >Update Item</button></a>
+                                    <a href="deleteProductProcess.php?product_id=<?php echo $row['product_id'];?>"><button type="button" class="btn btn-danger" onclick="return confirm('Are you sure to delete?')">Delete Item</button></a>
                                 </div>
+                        
                                 </div>
                             </div>
-                            </div>                                        
+                            </div>
+                            <!-- /.modal -->                                   
                             <?php
                         }
                     } else {
