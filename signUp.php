@@ -78,8 +78,8 @@
                         <label for="role-id" class="form-label">Role ID</label>
                         <select class="form-select" name="role_id" required>
                             <option selected disabled hidden>Open this select menu</option>
-                            <option value="1">Vendor</option>
-                            <option value="2">Tourist</option>                            
+                            <option value="2">Vendor</option>
+                            <option value="3">Tourist</option>                            
                         </select>
                     </div>
                     <div class="mb-3">
