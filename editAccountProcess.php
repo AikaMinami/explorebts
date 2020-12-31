@@ -9,6 +9,12 @@
     $email = $_POST['email'];        
     $profile_pict = $_FILES['profile_pict']['name'];
     
+    if(empty($profile_pict)) {
+        $query = "SELECT profile_pict FROM users WHERE user_id = $user_id";
+        $rowUser = mysqli_fetch_array(mysqli_query($connect, $query));
+        $profile_pict = $rowUser['profile_pict'];
+    } 
+
     $target_path="uploads/profile_pict/";
     $target_path = $target_path . basename($profile_pict);
 

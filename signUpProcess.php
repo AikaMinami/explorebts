@@ -33,9 +33,9 @@
         $_SESSION['user_id'] = $row['user_id'];
         $_SESSION['role_id'] = $role_id;        
         $_SESSION['login'] = true;        
-        if($role_id  == 1){            
+        if($role_id == 2){            
             echo "<script>alert('Sign Up Success! '); window.location.href='homeVendor.php'</script>";
-        } else if($role_id == 2){            
+        } else if($role_id == 3){            
             echo "<script>alert('Sign Up Success!'); window.location.href='homeUser.php'</script>";
         } 
     } else {                

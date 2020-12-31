@@ -2,8 +2,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="">
-        <meta name="author" content="">
+        <link rel="shortcut icon" href="assets/logo-bts.png" type="image/x-icon">
 
         <title>Upload Service - Explore BTS</title>
 
@@ -54,21 +53,13 @@
           <!--form!-->
         <div class="container">
             <br>
-        <form action="editProductProcess.php" method="POST" enctype="multipart/form-data">
+        <form action="editProductProcess.php?product_id=<?php echo $id?>" method="POST" enctype="multipart/form-data">
             <table>
             <?php
                 while($row = mysqli_fetch_array($result)){
                 $selectedCategories = $row['category_code'];
                 $options = array("CMP", "INN", "JEEP", "TRIP");
             ?>
-            <tr>
-                <td>
-                    Product ID   
-                </td>
-                <td>
-                    <input type="text" name="product_id" placeholder="Product ID" value="<?php echo $row['product_id']?>" required>
-                </td>
-            </tr>
             <tr>
                 <td>
                     Product Name    

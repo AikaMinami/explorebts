@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forget Password</title>
     <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="assets/logo-bts.png" type="image/x-icon">
         <script src='https://kit.fontawesome.com/a076d05399.js'></script>
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
@@ -33,10 +34,12 @@
             $row = mysqli_fetch_assoc($result);
                                     
             if($_SESSION['role_id'] == 1) {
-                include "components/navbarVendor.php";
+                include "components/navbarAdmin.php";
             } else if($_SESSION['role_id'] == 2) {
+                include "components/navbarVendor.php"; 
+            } else if($_SESSION['role_id'] == 3) {
                 include "components/navbarUser.php"; 
-            } 
+            }
         ?> 
         <br><br><br><br>
     <h1>Change Password</h1>

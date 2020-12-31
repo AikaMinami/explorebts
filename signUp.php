@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">    
         <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
         <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+        <link rel="shortcut icon" href="assets/logo-bts.png" type="image/x-icon">
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
