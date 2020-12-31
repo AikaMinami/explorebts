@@ -5,9 +5,7 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
+  <link rel="shortcut icon" href="assets/logo-bts.png" type="image/x-icon">
   <title>My Order - Explore BTS</title>
 
   <!-- Bootstrap core CSS -->
@@ -83,9 +81,12 @@
             <?php
                 include "connection.php";
                 $user_id = $_SESSION['user_id'];
-                $query = "SELECT * FROM bookings INNER JOIN products
-                 ON bookings.product_id = products.product_id
-                  WHERE tourist_id = '$user_id'";
+                $query = "SELECT booking_id, tourist_id, booking_date, b.product_id, p.product_pict, p.product_name, p.unit_price,
+                          product_desc, quantity, booking_days, booking_status, 
+                          (quantity * booking_days * p.unit_price) AS total_price
+                          FROM bookings b INNER JOIN products p
+                          ON b.product_id = p.product_id
+                          WHERE tourist_id = '$user_id'";
                 $result = mysqli_query($connect, $query);
                 
                 if(mysqli_num_rows($result) > 0){
@@ -108,21 +109,21 @@
                     <!-- /.product card -->    
                     <!-- modal -->
                         <div id="modal<?php echo $row['product_id'];?>" class="modal fade" role="dialog" >
-                        <div class="modal-dialog modal-sm" role="document">
+                        <div class="modal-dialog modal-md" role="document">
                             <div class="modal-content">
                                 
                             <!-- Modal Header -->
                             <div class="modal-header">
-                                <h4 class="modal-title"><?php echo $row['product_name'];?></h4>
+                                <h5 class="modal-title"><?php echo $row['product_name'];?></h5>
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                             </div>
                         
                             <!-- Modal body -->
-                            <div class="modal-body" style="align-items: center;">
-                                <img class="img-fluid" src="uploads/product_pict/<?php echo $row['product_pict'];?>" alt="">
-                                <br>
+                            <div class="modal-body" >
+                                <img class="img-fluid" src="uploads/product_pict/<?php echo $row['product_pict'];?>">
+                                <br><br>
                                 <?php echo $row['product_desc']; ?>
-                                <br>
+                                <br><br>
                                 <table>
                                     <tr>
                                         <td>Order For</td>
@@ -135,6 +136,10 @@
                                     <tr>
                                         <td>Length Booking</td>
                                         <td>: <?php echo $row['booking_days']; ?> days</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Total Price</td>
+                                        <td>: Rp <?php echo $row['total_price']; ?></td>
                                     </tr>
                                 </table>
                             </div>
@@ -168,12 +173,9 @@
   <!-- /.container -->
 
   <!-- Footer -->
-  <footer class="py-5 bg-dark">
-    <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy;  2020 - Group 1 Web Programming Design TI-2H</p>
-    </div>
-    <!-- /.container -->
-  </footer>
+  <?php
+    include "components/footer.php"
+  ?>
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>

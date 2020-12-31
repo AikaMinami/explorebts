@@ -3,6 +3,7 @@
     <head>    
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">    
+        <link rel="shortcut icon" href="assets/logo-bts.png" type="image/x-icon">
         <!-- Bootstrap core CSS -->
         <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -30,10 +31,10 @@
             $keyword = $_GET['keyword'];
             $user_id = $_SESSION['user_id'];            
                         
-            if($_SESSION['role_id'] == 1) {
+            if($_SESSION['role_id'] == 2) {
                 $query = "SELECT * FROM products WHERE product_name LIKE '%$keyword%' AND vendor_id = $user_id";                
                 include "components/navbarVendor.php";
-            } else if($_SESSION['role_id'] == 2) {
+            } else if($_SESSION['role_id'] == 3) {
                 $query = "SELECT * FROM products WHERE product_name LIKE '%$keyword%'";
                 include "components/navbarUser.php"; 
             } 

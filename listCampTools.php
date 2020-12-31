@@ -5,9 +5,8 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
+  <link rel="shortcut icon" href="assets/logo-bts.png" type="image/x-icon">
+  
   <title>List Inn - Explore BTS</title>
 
   <!-- Bootstrap core CSS -->
@@ -109,12 +108,9 @@
   <!-- /.container -->
   
   <!-- Footer -->
-  <footer class="fixed-bottom py-3 bg-dark">
-    <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; 2020 - Group 1 Web Programming Design TI-2H</p>
-    </div>
-    <!-- /.container -->
-  </footer>
+  <?php
+    include "components/footer.php"
+  ?>
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>

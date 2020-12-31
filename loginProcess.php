@@ -15,9 +15,11 @@
         $_SESSION['role_id'] = $row['role_id'];        
         $_SESSION['login'] = true;
         
-        if($row['role_id']  == 1){            
-            header('Location:homeVendor.php');
+        if($row['role_id'] == 1){            
+            header('Location:homeAdmin.php');
         } else if($row['role_id'] == 2){            
+            header('Location:homeVendor.php');      
+        } else if($row['role_id'] == 3){            
             header('Location:homeUser.php');        
         }
     } else {

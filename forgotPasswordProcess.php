@@ -19,9 +19,9 @@
             $_SESSION['role_id'] = $role_id;
             $_SESSION['login'] = true;
             echo $row['role_id'];
-            if($role_id  == 1){            
+            if($role_id == 2){            
                 echo "<script>alert('Update Successful '); window.location.href='homeVendor.php'</script>";
-            } else if($role_id == 2){            
+            } else if($role_id == 3){            
                 echo "<script>alert('Update Successful '); window.location.href='homeUser.php'</script>";
             } 
         }        

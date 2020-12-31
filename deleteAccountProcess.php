@@ -5,9 +5,9 @@
     $role_id = $_SESSION['role_id'];
     $user_id = $_GET['user_id'];
     
-    if ($role_id == 1) {
+    if ($role_id == 2) {
         $query = "DELETE FROM products WHERE vendor_id  = $user_id;";    
-    } else if ($role_id = 2) {
+    } else if ($role_id = 3) {
         $query = "DELETE FROM bookings WHERE tourist_id = $user_id;";    
     }    
     

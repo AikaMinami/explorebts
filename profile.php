@@ -2,11 +2,11 @@
 <html lang="en">
     <head>    
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">    
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">        
+        <meta name="viewport" content="width=device-width, initial-scale=1">            
+        <link rel="shortcut icon" href="assets/logo-bts.png" type="image/x-icon">
         <!-- Bootstrap core CSS -->
         <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">        
 
         <!-- Custom styles for this template -->
         <link href="css/shop-homepage.css" rel="stylesheet">
@@ -27,18 +27,18 @@
             $result = mysqli_query($connect, $query);
             $row = mysqli_fetch_assoc($result);
                                     
-            if($_SESSION['role_id'] == 1) {
-                include "components/navbarVendor.php";
-            } else if($_SESSION['role_id'] == 2) {
+            if($_SESSION['role_id'] == 2) {
+                include "components/navbarVendor.php"; 
+            } else if($_SESSION['role_id'] == 3) {
                 include "components/navbarUser.php"; 
-            } 
+            }
         ?>        
             <!-- Profile card -->
             <br>
-            <div class="card mx-auto text-center mb-3" style="width: 800px; height: 400px" >
-                <img style="width: 100px; height: 100px" src="uploads/profile_pict/<?php echo $row['profile_pict'];?>" class="mx-auto d-block card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title"><?php echo $row['fullname'];?></h5>
+            <div class="card mx-auto text-center mb-3" style="width: 600px; height: 442px" >
+                <h4 class="card-title mt-3"><?php echo $row['fullname'];?></h4>
+                <img style="width: 100px; height: 100px" src="uploads/profile_pict/<?php echo $row['profile_pict'];?>" class="mx-auto d-block card-img-top" alt="Profile picture">
+                <div class="card-body">                    
                     <p>Username: <?php echo $row['username'] ?></p>
                     <p>Address: <?php echo $row['address'] ?></p>
                     <p>Phone: <?php echo $row['phone'] ?></p>

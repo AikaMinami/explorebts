@@ -5,8 +5,7 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+  <link rel="shortcut icon" href="assets/logo-bts.png" type="image/x-icon">
 
   <title>HomeBTS</title>
 
@@ -75,15 +74,15 @@
         <!-- /.carousel -->
         <div class="container">
         <?php if($_SESSION['login']){ ?>
-            <h1>Welcome, <?php echo $_SESSION['username']; ?> !</h1> <br>
+            <h1>Welcome, <?php echo $_SESSION['username']; ?> !</h1>
             <?php } ?>
-            <h3>Recommended</h3>
             <!-- search -->
             <form action="search.php" method="GET" class="form-inline justify-content-center pt-4">
               <input class="form-control mr-sm-2 w-50" type="search" placeholder="Search" name="keyword">
             <button class="btn my-2 my-sm-0 search-button" type="submit" style="background-color:#f4623a; color:white">Search</button>
-            </form>
+            </form><br>
             <!-- /.search -->
+            <h3>Recommended</h3>
              <br>
         </div>
         
@@ -130,12 +129,9 @@
   <!-- /.container -->
 
   <!-- Footer -->
-  <footer class="py-5 bg-dark">
-    <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy;  2020 - Group 1 Web Programming Design TI-2H</p>
-    </div>
-    <!-- /.container -->
-  </footer>
+  <?php
+    include "components/footer.php"
+  ?>
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>

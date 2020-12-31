@@ -15,9 +15,6 @@
             <a class="nav-link" href="profile.php">Profile</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About Us</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="logoutSession.php">Log Out</a>
           </li>
         </ul>
