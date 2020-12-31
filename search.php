@@ -94,7 +94,7 @@
                             
                                 <!-- Modal body -->
                                 <div class="modal-body" style="align-items: center;">
-                                    <img class="img-fluid" src="uploads/<?php echo $row['product_pict'];?>" alt="">
+                                    <img class="img-fluid" src="uploads/product_pict/<?php echo $row['product_pict'];?>" alt=""><br><br>
                                     <?php echo $row['product_desc']; ?>
                                 </div>
                             
