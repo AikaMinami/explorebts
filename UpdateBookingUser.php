@@ -44,15 +44,16 @@
     <body>
         <!-- navbar -->
         <?php
-                include 'components/navbarUser.php';
-            // /.navbar
-                include "connection.php";
-                $id = $_GET['product_id'];
-                $query = "SELECT * FROM bookings WHERE product_id = '$id'";
-                $result = mysqli_query($connect, $query);
-            ?>
+            include 'components/navbarUser.php';
+        // /.navbar
+            include "connection.php";
+            $id = $_GET['product_id'];
+            $query = "SELECT * FROM bookings WHERE product_id = '$id'";
+            $result = mysqli_query($connect, $query);
+            $row = mysqli_fetch_array($result)
+        ?>
         
-         <!--form!-->        
+        <!--form!-->        
         <h1>Update Booking Page</h1> 
         <div class="card container">
             <div class="card-body" style="font-weight: bold;">
@@ -73,8 +74,7 @@
                 <button type="submit" class="btn btn-primary">Submit</button>          
             </form>              
             </div>    
-        </div>    
-        
+        </div>            
         <!-- Footer -->
         <?php
             include 'components/footer.php';
