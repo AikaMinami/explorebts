@@ -66,7 +66,7 @@
                                     <div class="card-footer">                            
                                         <div class="row">
                                             <?php
-                                                if($_SESSION['role_id'] == 1) { ?>
+                                                if($_SESSION['role_id'] == 2) { ?>
                                                     <div class=col>
                                                         <a href="editForm.php?product_id=<?php echo $row['product_id'];?>"><button type="button" class="btn btn-success">Edit</button></a>
                                                     </div>
@@ -74,7 +74,7 @@
                                                         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteProduct<?php echo $row['product_id'];?>">Delete</button>
                                                     </div>
                                                 <?php
-                                                } else if($_SESSION['role_id'] == 2) {?>
+                                                } else if($_SESSION['role_id'] == 3) {?>
                                                     <a href="booking.php?product_id=<?php echo $row['product_id'];?>"><button type="button" class="btn btn-primary">Booking!</button></a>
                                                     <?php
                                                 }                                                 
