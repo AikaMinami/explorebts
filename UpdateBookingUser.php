@@ -51,36 +51,30 @@
                 $query = "SELECT * FROM bookings WHERE product_id = '$id'";
                 $result = mysqli_query($connect, $query);
             ?>
-          <!--form!-->
-          
-          <h1>Update Booking Page</h1> 
-            <div class="card container">
+        
+         <!--form!-->        
+        <h1>Update Booking Page</h1> 
+        <div class="card container">
             <div class="card-body" style="font-weight: bold;">
             <br>
-            <form action="editBookingProcess.php?booking_id=<?php echo $_GET['booking_id'];?>&product_id=<?php echo $id?>" method="POST">
-            <?php
-                while($row = mysqli_fetch_array($result)){
-            ?>             
-                            <div class="mb-3">
-                                <label for="booking_date" class="form-label" >Booking Date (yyyy-mm-dd)</label>
-                                <input type="text" class="form-control disabled" name="booking_date" value="<?php echo $row['booking_date']?>" required>                                
-                            </div>
-                            <div class="mb-3">
-                                <label for="quantity" class="form-label">Quantity</label>
-                                <input type="text" class="form-control" name="quantity" value="<?php echo $row['quantity']?>" required>                                
-                            </div>
-                            <div class="mb-3">
-                                <label for="booking_days" class="form-label">Booking Days (Length Of Booking)</label>
-                                <input type="text" class="form-control" name="booking_days" value="<?php echo $row['booking_days']?>" required>                                
-                            </div>
-                                                
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                        </form>
-                    </div>    
+            <form action="editBookingProcess.php?booking_id=<?php echo $_GET['booking_id'];?>&product_id=<?php echo $id?>" method="POST">                
+                <div class="mb-3">
+                    <label for="booking_date" class="form-label" >Booking Date (yyyy-mm-dd)</label>
+                    <input type="text" class="form-control disabled" name="booking_date" value="<?php echo $row['booking_date']?>" required>                                
                 </div>
-                <?php
-                    }
-                ?>   
+                <div class="mb-3">
+                    <label for="quantity" class="form-label">Quantity</label>
+                    <input type="text" class="form-control" name="quantity" value="<?php echo $row['quantity']?>" required>                                
+                </div>
+                <div class="mb-3">
+                    <label for="booking_days" class="form-label">Booking Days (Length Of Booking)</label>
+                    <input type="text" class="form-control" name="booking_days" value="<?php echo $row['booking_days']?>" required>                                
+                </div>                                    
+                <button type="submit" class="btn btn-primary">Submit</button>          
+            </form>              
+            </div>    
+        </div>    
+        
         <!-- Footer -->
         <?php
             include 'components/footer.php';
